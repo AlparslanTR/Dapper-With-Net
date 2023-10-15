@@ -27,9 +27,9 @@ namespace EstateAPI.Repositories.CategoryRepo
                 var values = await connection.QueryAsync<CategoryListDto>(QueryCategoryList);
                 if (values is null || !values.Any())
                 {
-                    return ResponseDto<List<CategoryListDto>>.CreateFail("Herhangi Bir Veri Yok",HttpStatusCode.NotFound);
+                    return ResponseDto<List<CategoryListDto>>.CreateFail("Hiçbir Veri Bulunamadı", HttpStatusCode.NotFound);
                 }
-                return ResponseDto<List<CategoryListDto>>.CreateSuccess(new List<CategoryListDto>(values), "Başarılı", HttpStatusCode.OK);
+                return ResponseDto<List<CategoryListDto>>.CreateSuccess(values.ToList(), "Başarılı", HttpStatusCode.OK);
             }
         }
 

@@ -25,8 +25,7 @@ namespace EstateAPI.Controllers
         [HttpPost]
         public async Task<IActionResult>Add(CategoryCreateDto request)
         {
-            var category = await _repo.Create(request);
-            return Ok(category);
+            return Ok(await _repo.Create(request));
         }
 
         [HttpDelete]
@@ -38,8 +37,7 @@ namespace EstateAPI.Controllers
         [HttpPut]
         public async Task<IActionResult>Update(CategoryUpdateDto request)
         {
-            var category = await _repo.Update(request);
-            return Ok(category);
+            return Ok(await _repo.Update(request));
         }
 
         [HttpGet("{id}")]
