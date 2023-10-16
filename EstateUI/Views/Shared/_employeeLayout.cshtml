@@ -18,16 +18,16 @@
 <body class="">
     <div id="wrapper">
         <nav class="navbar-default navbar-static-side" role="navigation">
-            @await Html.PartialAsync("employeeLeftNavbar") @* Sol Navbar *@
+            @await Html.PartialAsync("Employee/employeeLeftNavbar") @* Sol Navbar *@
         </nav>  
         <div id="page-wrapper" class="gray-bg">
-            @await Html.PartialAsync("employeeHeader") @* Header *@
+            @await Html.PartialAsync("Employee/employeeHeader") @* Header *@
             <div class="wrapper wrapper-content">
                 <div class="middle-box text-center animated fadeInRightBig">
                 @RenderBody()
                 </div>
             </div>
-            @await Html.PartialAsync("employeeFooter") @* Footer *@
+            @await Html.PartialAsync("Employee/employeeFooter") @* Footer *@
 
         </div>
     </div>

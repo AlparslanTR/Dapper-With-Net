@@ -1,0 +1,12 @@
+﻿@model List<CategoryListDto>
+@if (Model == null || Model.Count==0)
+{
+    <a class="dropdown-item @@ps__active" href="property-single.html">@TempData["ErrorMessage"]</a>
+}
+else
+{
+    @foreach (var category in Model)
+    {
+        <a class="dropdown-item @@ps__active" href="property-single.html">@category.name</a>
+    }
+}
