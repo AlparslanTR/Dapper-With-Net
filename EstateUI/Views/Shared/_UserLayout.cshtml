@@ -21,19 +21,6 @@
     <!--header-->
     @await Html.PartialAsync("User/userHeader") @*Header Partial*@
     <!--/header-->
-    <section class="w3l-about-breadcrumb">
-        <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
-            <div class="container pt-lg-5 py-3">
-            </div>
-        </div>
-    </section>
-    <section class="w3l-breadcrumb">
-        <div class="container">
-            <ul class="breadcrumbs-custom-path">
-                <li><a asp-controller="Home" asp-action="Index">Anasayfa</a></li>
-            </ul>
-        </div>
-    </section>
     <section class="locations-1" id="locations">
        @RenderBody()
     </section>

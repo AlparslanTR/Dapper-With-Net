@@ -4,5 +4,8 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-<h1>Burası Anasayfa</h1>
+@await Component.InvokeAsync("HomePageFilter")
+@await Component.InvokeAsync("HomePageLastAdded")
+@await Component.InvokeAsync("HomePagePopulationCity")
+@await Component.InvokeAsync("HomePageOurEmployee")
 

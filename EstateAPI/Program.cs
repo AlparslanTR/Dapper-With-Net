@@ -1,5 +1,6 @@
 using EstateAPI.Data;
 using EstateAPI.Repositories.CategoryRepo;
+using EstateAPI.Repositories.EmployeeRelationComment;
 using EstateAPI.Repositories.EstateRepo;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<AppDbContext>();
 builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 builder.Services.AddScoped<IEstateRepo, EstateRepo>();
+builder.Services.AddScoped<IRelationCommentRepo, RelationCommentRepo>();
 
 var app = builder.Build();
 

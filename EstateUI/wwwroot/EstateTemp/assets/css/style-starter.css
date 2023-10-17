@@ -11175,7 +11175,7 @@ a.title-small {
   height: 100%; }
 
 .w3l-left-img1 {
-  background: url(../images/who1.jpg) no-repeat center center;
+  background: url('/EstateTemp/assets/images/estate-2.jpg') no-repeat center center;
   background-size: cover;
   position: relative;
   border-top-left-radius: var(--border-radius);

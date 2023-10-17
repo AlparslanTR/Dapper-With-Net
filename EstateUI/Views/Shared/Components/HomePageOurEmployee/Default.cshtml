@@ -1,0 +1,75 @@
+﻿@model List<RelationCommentsListDto>
+<section class="w3l-index3" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container pb-lg-5 pb-md-4 pb-2">
+            <div class="row">
+                <div class="col-lg-5 pr-lg-0">
+                    <div class="w3l-left-img1">
+                    </div>
+                </div>
+                <div class="col-lg-7 pl-lg-0">
+                    <div class="w3l-right-info">
+                        <h6 class="title-small">Müşterilerimiz</h6>
+                        <div class="client-grid">
+                            <div class="client-title">
+                                <h3 class="title-big">Müşteri İlişkilerine Değer Veriyoruz</h3>
+                            </div>
+                            <div class="clients-info">
+                                <h3 class="title-big">@Model.Count</h3>
+                                <p>Müşteri Değerlendirmesi</p>
+                            </div>
+                        </div>
+
+                        <div class="w3l-clients" id="testimonials">                      
+                            <div id="owl-demo1" class="owl-carousel owl-theme mt-4 pt-2 mb-4">
+                                @if (Model is null || Model.Count ==0)
+                                {
+                                    <div class="item">
+                                        <div class="testimonial-content">
+                                            <div class="testimonial">
+                                                <div class="testi-des">
+                                                    <div class="peopl align-self">
+                                                        <h4>@TempData["ErrorMessageForName"]</h4>
+                                                    </div>
+                                                </div>
+                                                <blockquote>
+                                                    <q>
+                                                        @TempData["ErrorMessageForDefaultComment"]
+                                                    </q>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    @foreach (var comments in Model)
+                                    {
+                                        <div class="item">
+                                            <div class="testimonial-content">
+                                                <div class="testimonial">
+                                                    <div class="testi-des">
+                                                        <div class="peopl align-self">
+                                                            <h4>@comments.employeeName</h4>
+                                                        </div>
+                                                    </div>
+                                                    <blockquote>
+                                                        <q>
+                                                            @comments.comments
+                                                        </q>
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>                         
+                        </div>
+                        <a href="#agents" class="btn btn-style btn-primary mt-5">Bizimle İletişime Geçin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
