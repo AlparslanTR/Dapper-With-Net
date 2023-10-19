@@ -1,6 +1,6 @@
 ﻿using EstateAPI.Dtos.Contact;
 
-namespace EstateAPI.Services.Email
+namespace EstateUI.Services.Email
 {
     public interface IEmailService
     {

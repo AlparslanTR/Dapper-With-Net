@@ -1,3 +1,6 @@
+using EstateAPI.Data;
+using EstateUI.Services.Email;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,9 @@ builder.Services.AddControllersWithViews()
                 .AddRazorRuntimeCompilation();
 
 builder.Services.AddHttpClient();
+builder.Services.AddSingleton<AppDbContext>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.Configure<IEmailService>(builder.Configuration.GetSection("EmailSetting"));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
