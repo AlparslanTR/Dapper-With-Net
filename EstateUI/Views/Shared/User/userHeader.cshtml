@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav ml-lg-5 mr-auto">
                     <li class="nav-item @@home__active">
-                        <a class="nav-link" href="index.html">Anasayfa <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Anasayfa <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="listing.html">İlanlar</a>
@@ -37,11 +37,11 @@
                     <li class="nav-item dropdown @@pages__active">
                         <a class="nav-link dropdown-toggle" href="#url" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pages <span class="fa fa-angle-down"></span>
+                            Biz Kimiz <span class="fa fa-angle-down"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item @@about__active" href="about.html">About us</a>
-                            <a class="dropdown-item @@contact__active" href="contact.html">Contact us</a>
+                            <a class="dropdown-item @@about__active" asp-controller="Home" asp-action="About">Hakkımızda</a>
+                            <a class="dropdown-item @@contact__active" asp-controller="Home" asp-action="Contact">İletişim</a>
                         </div>
                     </li>
                 </ul>
@@ -82,3 +82,17 @@
         </nav>
     </div>
 </header>
+<script>
+    $(document).ready(function () {
+        var currentUrl = window.location.pathname; // Şu anki sayfanın URL'sini al
+
+        $(".navbar-nav li.nav-item").each(function () {
+            var menuUrl = $(this).find("a.nav-link").attr("href"); // Menü bağlantısının URL'sini al
+
+            if (currentUrl === menuUrl) {
+                $(this).addClass("active"); // Eşleşen URL'ye sahip menüye "active" sınıfını ekle
+            }
+        });
+    });
+</script>
+   

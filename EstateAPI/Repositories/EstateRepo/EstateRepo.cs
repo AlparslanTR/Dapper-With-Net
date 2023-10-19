@@ -10,15 +10,15 @@ namespace EstateAPI.Repositories.EstateRepo
     public class EstateRepo : IEstateRepo
     {
         private readonly AppDbContext _context;
-        private const string QueryEstateList = "Select Id, Title, Price, City, District, CategoryId FROM Estate";
+        private const string QueryEstateList = "Select Id, Title, Price, City, District, Type, CategoryId FROM Estate Order By Id Desc";
         private const string QueryEstateListWithCategory =
         "Select E.Id, E.Title, E.Price, E.City, E.District, C.Name as CategoryName from Estate as E inner join Category as C on E.CategoryId = C.Id";
         private const string QueryEstateAdd =
-        "Insert into Estate (Title,Price,CoverImage,City,District,Address,Description,CategoryId,EmployeeId) values (@Title, @Price,@CoverImage,@City,@District,@Address,@Description,@CategoryId,@EmployeeId)";
+        "Insert into Estate (Title,Price,CoverImage,City,District,Address,Description,Type,CategoryId,EmployeeId) values (@Title, @Price,@CoverImage,@City,@District,@Address,@Description,@CategoryId,@EmployeeId)";
         private const string QueryEstateListWithEmployee = 
         "Select E.Id, E.Title, E.Price, E.City, E.District, U.Name as EmployeeName from Estate as E inner join Employee as U on E.EmployeeId = U.Id";
         private const string QueryEstateUpdate =
-        "Update Estate set Title =@Title, Price =@Price, CoverImage =@CoverImage, City =@City, District = @District, Address =@Address, Description=@Description, CategoryId = @CategoryId, EmployeeId=@EmployeeId where Id=@id";
+        "Update Estate set Title =@Title, Price =@Price, CoverImage =@CoverImage, City =@City, District = @District, Address =@Address, Description=@Description, Type=@Type , CategoryId = @CategoryId, EmployeeId=@EmployeeId where Id=@id";
         private const string QueryEstateGetById = "Select Id,Title,Price,City,District,CategoryId from Estate where Id=@id";
         private const string QueryEstateDelete = "Delete from Estate where Id=@id";
 
@@ -63,6 +63,7 @@ namespace EstateAPI.Repositories.EstateRepo
             parameters.Add("@District", createDto.district);
             parameters.Add("@Address", createDto.address);
             parameters.Add("@Description", createDto.description);
+            parameters.Add("@Type", createDto.description);
             parameters.Add("@CategoryId", createDto.categoryId);
             parameters.Add("@EmployeeId", createDto.employeeId);
 
