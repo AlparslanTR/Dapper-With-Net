@@ -22,16 +22,22 @@ namespace EstateAPI.Controllers
             return Ok(await _repo.GetAll());
         }
 
-        [HttpGet("EstateListWithCategory")]
+        [HttpGet]
         public async Task<IActionResult> GetAllWithCategory()
         {
             return Ok(await _repo.GetAllWithCategory());
         }
 
-        [HttpGet("EstateListWithEmployee")]
+        [HttpGet]
         public async Task<IActionResult> GetAllWithEmployee()
         {
             return Ok(await _repo.GetAllWithEmployee());
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllWithCity()
+        {
+            return Ok(await _repo.GetAllWithCity());
         }
 
         [HttpPost]

@@ -1,6 +1,6 @@
 ﻿namespace EstateAPI.Dtos.Estate
 {
-    public record EstateListWithCategoryDto(int id, string title, decimal price, string city, string district, string categoryName)
+    public record EstateListWithCategoryDto(int id, string title, decimal price, int cityId, string categoryName)
     {
     }
 }

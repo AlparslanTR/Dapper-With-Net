@@ -7,6 +7,7 @@ namespace EstateAPI.Repositories.EstateRepo
         Task<ResponseDto<List<EstateListDto>>> GetAll();
         Task<ResponseDto<List<EstateListWithCategoryDto>>> GetAllWithCategory();
         Task<ResponseDto<List<EstateListWithEmployeeDto>>> GetAllWithEmployee();
+        Task<ResponseDto<List<EstateListWithCityDto>>> GetAllWithCity();
         Task<ResponseDto<EstateCreateDto>> Create(EstateCreateDto createDto);
         Task<ResponseDto<EstateUpdateDto>> Update(EstateUpdateDto updateDto);
         Task<ResponseDto<EstateListDto>> GetById(int id);

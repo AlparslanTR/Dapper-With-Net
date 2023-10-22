@@ -1,5 +1,6 @@
 using EstateAPI.Data;
 using EstateAPI.Repositories.CategoryRepo;
+using EstateAPI.Repositories.CityRepo;
 using EstateAPI.Repositories.EmployeeRelationComment;
 using EstateAPI.Repositories.EstateRepo;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,7 @@ builder.Services.AddSingleton<AppDbContext>();
 builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 builder.Services.AddScoped<IEstateRepo, EstateRepo>();
 builder.Services.AddScoped<IRelationCommentRepo, RelationCommentRepo>();
+builder.Services.AddScoped<ICityRepo, CityRepo>();
 
 var app = builder.Build();
 
