@@ -8,5 +8,17 @@ namespace EstateUI.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult MyProfile()
+        {
+            return View();
+        }
+
+        //[HttpPost]
+        //public IActionResult MyProfile()
+        //{
+        //    return View();
+        //}
     }
 }
